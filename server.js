@@ -6,7 +6,7 @@ const app=express()
 
 
 async function connection(){
-    await mongoose.connect('db:mongo//mongo:27017/masai')
+    await mongoose.connect('mongodb+srv://beatHubUser:Guruji%40707@beathubuser.yi1fp0a.mongodb.net/')
     console.log("db is connected successfully")
 }
 connection()
