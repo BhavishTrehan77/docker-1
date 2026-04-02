@@ -1,4 +1,5 @@
 const { default: mongoose } = require("mongoose")
+require('dotenv').config()
 
 const express=require('express')
 const app=express()
@@ -6,7 +7,7 @@ const app=express()
 
 
 async function connection(){
-    await mongoose.connect('mongodb+srv://beatHubUser:Guruji%40707@beathubuser.yi1fp0a.mongodb.net/')
+    await mongoose.connect(process.env.MONGO_URI)
     console.log("db is connected successfully")
 }
 connection()
@@ -16,4 +17,4 @@ app.get("/",async(req,resp)=>{
 })
 
 
-app.listen(3000)
+app.listen(process.env.PORT)
